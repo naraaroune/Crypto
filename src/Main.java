@@ -9,16 +9,19 @@ public class Main {
 		System.out.println(key);
 		System.out.println();
 		
-		String encodedMessage = cypher.encode(f.getTexte(), key);
+		String encodedMessage = cypher.encode(f.getTexte2(), key);
+		String decodedMessage=cypher.decode(encodedMessage, key);
 		System.out.println("encoded: " + encodedMessage);
 		System.out.println("decoded: " + cypher.decode(encodedMessage, key));
 		System.out.println();
 
 		MonoEncocdedAttck mea = new MonoEncocdedAttck();
 
-		f.printSorted();;
-		mea.getFrequencies(mesageEncoded);
+		f.printSorted();
+		mea.getFrequencies(encodedMessage);
 		mea.printSorted();
+		mea.getKey(f.getList(), mea.getList());
+		mea.getMap();
 	}
 
 }
