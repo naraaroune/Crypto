@@ -23,8 +23,9 @@ public class Main {
 //		mea.getMap();
 		
 		CypherHomo ch= new CypherHomo();
+		ch.printFrequenceSymbole();
 		//System.out.println(ch.getFrequenceLetter());
-		System.out.println(ch.getFrequenceSymbole());
+		//System.out.println(ch.getFrequenceSymbole());
 	}
 
 }
