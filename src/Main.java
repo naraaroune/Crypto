@@ -29,9 +29,9 @@ public class Main {
 		PolyAlpha pa=new PolyAlpha();
 		String key=pa.generateKey();
 		System.out.println(key);
-		String message="HELLO";
+		String message="SALUT SAID";
 		System.out.println(message);
-		String messageEncoded=pa.encoded("AAA", message);
+		String messageEncoded=pa.encoded("BACHELIER",message);
 		System.out.println(messageEncoded);
 	}
 

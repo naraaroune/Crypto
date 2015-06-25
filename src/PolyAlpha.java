@@ -3,7 +3,7 @@ import java.util.Collections;
 import java.util.Random;
 
 public class PolyAlpha {
-	private static final String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	private static final String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ ";
 	private ArrayList<Character> arrayAlphabet = new ArrayList<Character>();
 
 	
@@ -34,9 +34,17 @@ public class PolyAlpha {
 		for(int i=0;i<message.length();i++){
 			char c=key.charAt(i);//letter of key
 			int index=alphabet.indexOf(c);//index of c
+			
 			char c2=message.charAt(j);//letter of message
-			int index2=alphabet.indexOf(c2);//index of c			
-			char newChar=alphabet.charAt(index+index2);
+			int index2=alphabet.indexOf(c2);//index of c
+			int indexFinal=index+index2;
+			if(index+index2>=alphabet.length()){	
+				int indexTpm=alphabet.length()-index;
+				indexFinal=Math.abs(index2-indexTpm);
+			}
+
+			
+			char newChar=alphabet.charAt(indexFinal);//newchar
 			
 			messageEncoded+=newChar;
 			if(j==message.length()-1){
