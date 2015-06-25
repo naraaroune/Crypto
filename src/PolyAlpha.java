@@ -69,14 +69,14 @@ public class PolyAlpha {
 			int index2=alphabet.indexOf(c2);//index of c
 			int indexFinal=index2-index;
 			System.out.println(c+"->"+index+" "+c2+"->"+index2);
-			if(indexFinal<=0){	
-				//System.out.println("abs: "+Math.abs(index-index2));
+			if(indexFinal<0){	
+				System.out.println("abs: "+Math.abs(index-index2));
 				indexFinal=alphabet.length()-(Math.abs(index-index2));
 			}
 
 			
 			char newChar=alphabet.charAt(indexFinal);//newchar
-			
+			System.out.println(newChar+"....");
 			messageDecoded+=newChar;
 			if(j==message.length()-1){
 				break ;

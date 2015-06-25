@@ -29,9 +29,8 @@ public class Main {
 		PolyAlpha pa=new PolyAlpha();
 		String key=pa.generateKey();
 		System.out.println(key);
-		String message="IGMNP";
-		System.out.println(message);
-		String messageEncoded=pa.encoded("BACHELIER",message);
+		String message="BACHELIER";
+		String messageEncoded=pa.encoded(key,message);
 		String messageDecoded=pa.decoded(key,message);
 		System.out.println(messageDecoded);
 	}
