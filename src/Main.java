@@ -29,10 +29,11 @@ public class Main {
 		PolyAlpha pa=new PolyAlpha();
 		String key=pa.generateKey();
 		System.out.println(key);
-		String message="SALUT SAID";
+		String message="IGMNP";
 		System.out.println(message);
 		String messageEncoded=pa.encoded("BACHELIER",message);
-		System.out.println(messageEncoded);
+		String messageDecoded=pa.decoded(key,message);
+		System.out.println(messageDecoded);
 	}
 
 }

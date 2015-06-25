@@ -57,4 +57,35 @@ public class PolyAlpha {
 		}
 		return messageEncoded;
 	}
+	
+	public String decoded(String key,String message){
+		int j=0;
+		String messageDecoded="";
+		for(int i=0;i<message.length();i++){
+			char c=key.charAt(i);//letter of key
+			int index=alphabet.indexOf(c);//index of c
+			
+			char c2=message.charAt(j);//letter of message
+			int index2=alphabet.indexOf(c2);//index of c
+			int indexFinal=index2-index;
+			System.out.println(c+"->"+index+" "+c2+"->"+index2);
+			if(indexFinal<=0){	
+				//System.out.println("abs: "+Math.abs(index-index2));
+				indexFinal=alphabet.length()-(Math.abs(index-index2));
+			}
+
+			
+			char newChar=alphabet.charAt(indexFinal);//newchar
+			
+			messageDecoded+=newChar;
+			if(j==message.length()-1){
+				break ;
+			}
+			if(i==key.length()-1 && key.length()<message.length()){
+				i=-1;
+			}
+			j++;
+		}
+		return messageDecoded;
+	}
 }
