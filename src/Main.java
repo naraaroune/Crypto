@@ -22,10 +22,17 @@ public class Main {
 //		mea.getKey(f.getList(), mea.getList());
 //		mea.getMap();
 		
-		CypherHomo ch= new CypherHomo();
-		ch.printFrequenceSymbole();
+//		CypherHomo ch= new CypherHomo();
+//		ch.printFrequenceSymbole();
 		//System.out.println(ch.getFrequenceLetter());
 		//System.out.println(ch.getFrequenceSymbole());
+		PolyAlpha pa=new PolyAlpha();
+		String key=pa.generateKey();
+		System.out.println(key);
+		String message="HELLO";
+		System.out.println(message);
+		String messageEncoded=pa.encoded("AAA", message);
+		System.out.println(messageEncoded);
 	}
 
 }
