@@ -1,7 +1,10 @@
+import java.io.IOException;
+import java.util.List;
+
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 //		MonoCypher cypher = new MonoCypher();
 //		String key = cypher.generatedKey();
 //		Frequencies f=new Frequencies();
@@ -26,13 +29,25 @@ public class Main {
 //		ch.printFrequenceSymbole();
 		//System.out.println(ch.getFrequenceLetter());
 		//System.out.println(ch.getFrequenceSymbole());
-		PolyAlpha pa=new PolyAlpha();
-		String key=pa.generateKey();
+//		PolyAlpha pa=new PolyAlpha();
+//		String key=pa.generateKey();
+//		System.out.println("key: "+key);
+//		String message="TCMWUB";
+//		System.out.println("message: "+message);
+//		String messageEncoded=pa.encoded(key,message);
+//		String messageDecoded=pa.decoded("BC",message);
+//		System.out.println("message decoded: "+messageDecoded);
+		Transposition t=new Transposition();
+		String message= "SALUT CRYPTO";
+		System.out.println(message);
+		List<Integer> key=t.generatePermutation(3);
 		System.out.println(key);
-		String message="BACHELIER";
-		String messageEncoded=pa.encoded(key,message);
-		String messageDecoded=pa.decoded(key,message);
-		System.out.println(messageDecoded);
+		String messageEncoded=t.encode(message, key);
+		System.out.println(messageEncoded);
+		TranspositionAttack tp =new TranspositionAttack();
+		
+		
+
 	}
 
 }
